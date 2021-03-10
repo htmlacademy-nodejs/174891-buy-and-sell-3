@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require(`fs`);
+
 module.exports.getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -13,4 +15,14 @@ module.exports.shuffle = (someArray) => {
   }
 
   return someArray;
+};
+
+module.exports.generateJSON = (fileName, data) => {
+  try {
+    const content = JSON.stringify(data);
+    fs.writeFileSync(fileName, content);
+    console.info(`Operation success. File created.`);
+  } catch (err) {
+    console.error(`Can't write data to file...`);
+  }
 };
