@@ -17,12 +17,13 @@ module.exports.shuffle = (someArray) => {
   return someArray;
 };
 
-module.exports.generateJSON = (fileName, data) => {
+module.exports.writeJSONFile = (fileName, data) => {
   try {
     const content = JSON.stringify(data);
     fs.writeFileSync(fileName, content);
     console.info(`Operation success. File created.`);
   } catch (err) {
-    console.error(`Can't write data to file...`);
+    console.error(`Can't write data to file, ${err}`);
+    throw err;
   }
 };

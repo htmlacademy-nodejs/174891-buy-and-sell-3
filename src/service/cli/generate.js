@@ -1,7 +1,7 @@
 'use strict';
 
 const {
-  generateJSON,
+  writeJSONFile,
   generateCategory,
   generateDescription,
   generatePictureName,
@@ -80,6 +80,6 @@ module.exports = {
     }
     const content = JSON.stringify(generateOffers(countOffer));
 
-    return generateJSON(FILE_NAME, content);
+    return writeJSONFile(FILE_NAME, content);
   }
 };
