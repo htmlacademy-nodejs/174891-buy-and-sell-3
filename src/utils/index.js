@@ -1,9 +1,7 @@
 'use strict';
 
 const {
-  getRandomInt,
-  shuffle,
-  generateJSON,
+  Utils,
 } = require(`./utils`);
 
 const {
@@ -16,9 +14,7 @@ const {
 } = require(`./generateOffers`);
 
 module.exports = {
-  getRandomInt,
-  shuffle,
-  generateJSON,
+  Utils,
   generateCategory,
   generateDescription,
   generatePictureName,
