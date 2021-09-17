@@ -12,11 +12,6 @@ const {
 
 const FILE_NAME = `mocks.json`;
 
-const Count = {
-  DEFAULT_COUNT: 1,
-  MAX_COUNT: 1000,
-};
-
 const TITLES = [
   `Продам книги Стивена Кинга`,
   `Продам новую приставку Sony Playstation 5`,
@@ -46,6 +41,11 @@ const CATEGORIES = [
   `Животные`,
   `Журналы`,
 ];
+
+const Count = {
+  DEFAULT_COUNT: 1,
+  MAX_COUNT: 1000,
+};
 
 const OfferType = {
   OFFER: `offer`,

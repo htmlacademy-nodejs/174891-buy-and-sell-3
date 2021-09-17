@@ -1,6 +1,6 @@
 'use strict';
 
-const {Utils: Utils} = require(`./utils`);
+const {Utils} = require(`./utils`);
 
 const generateCategory = (categories) => {
   return Array.of(categories[Utils.getRandomInt(0, categories.length - 1)]);
