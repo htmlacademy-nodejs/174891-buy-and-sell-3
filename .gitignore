@@ -15,4 +15,4 @@ node_modules/
 build/
 
 # Файлы моковых данных
-mock.json
+mocks.json
