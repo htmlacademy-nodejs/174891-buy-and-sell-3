@@ -1,7 +1,7 @@
 'use strict';
 
 const {
-  writeJSONFile,
+  Utils,
   generateCategory,
   generateDescription,
   generatePictureName,
@@ -10,9 +10,7 @@ const {
   generateSum
 } = require(`../../utils/index`);
 
-const DEFAULT_COUNT = 1;
 const FILE_NAME = `mocks.json`;
-const MAX_COUNT = 1000;
 
 const TITLES = [
   `Продам книги Стивена Кинга`,
@@ -44,6 +42,11 @@ const CATEGORIES = [
   `Журналы`,
 ];
 
+const Count = {
+  DEFAULT_COUNT: 1,
+  MAX_COUNT: 1000,
+};
+
 const OfferType = {
   OFFER: `offer`,
   SALE: `sale`,
@@ -74,12 +77,11 @@ module.exports = {
   name: `--generate`,
   run(args) {
     const [count] = args;
-    let countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
-    if (countOffer > MAX_COUNT) {
-      countOffer = MAX_COUNT;
+    let countOffer = Number.parseInt(count, 10) || Count.DEFAULT_COUNT;
+    if (countOffer > Count.MAX_COUNT) {
+      countOffer = Count.MAX_COUNT;
     }
-    const content = JSON.stringify(generateOffers(countOffer));
 
-    return writeJSONFile(FILE_NAME, content);
+    return Utils.writeJSONFile(FILE_NAME, JSON.stringify(generateOffers(countOffer)));
   }
 };

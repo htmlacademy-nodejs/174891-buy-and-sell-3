@@ -1,13 +1,13 @@
 'use strict';
 
-const {getRandomInt, shuffle} = require(`./utils`);
+const {Utils} = require(`./utils`);
 
 const generateCategory = (categories) => {
-  return Array.of(categories[getRandomInt(0, categories.length - 1)]);
+  return Array.of(categories[Utils.getRandomInt(0, categories.length - 1)]);
 };
 
 const generateDescription = (descriptions) => {
-  return shuffle(descriptions).slice(1, 5).join(` `);
+  return Utils.shuffle(descriptions).slice(1, 5).join(` `);
 };
 
 
@@ -16,12 +16,12 @@ const getPictureFileName = (number) => {
 };
 
 const generatePictureName = (pictureMinNumber, pictureMaxNumber) => {
-  return getPictureFileName(getRandomInt(pictureMinNumber, pictureMaxNumber));
+  return getPictureFileName(Utils.getRandomInt(pictureMinNumber, pictureMaxNumber));
 };
 
 
 const generateTitle = (titles) => {
-  return Array.of(titles[getRandomInt(0, titles.length - 1)]);
+  return Array.of(titles[Utils.getRandomInt(0, titles.length - 1)]);
 };
 
 const generateType = (type) => {
@@ -29,7 +29,7 @@ const generateType = (type) => {
 };
 
 const generateSum = (minSum, maxSum) => {
-  return getRandomInt(minSum, maxSum);
+  return Utils.getRandomInt(minSum, maxSum);
 };
 
 module.exports = {
